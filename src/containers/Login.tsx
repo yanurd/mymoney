@@ -6,10 +6,10 @@ import Header from "../components/Header"
 //Validation
 import { EmailValidation } from "../constants/RegEx"
 
-interface LoginForm {
-  email: string,
-  password: string
-}
+//Interfaces
+import { LoginForm } from "../interfaces/login"
+
+
 const Login = () => {
   const { register, handleSubmit } = useForm<LoginForm>()
   const onSubmit = (data: LoginForm) => console.log(data)
