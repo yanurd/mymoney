@@ -1,4 +1,4 @@
-import HEADER from "../interface/header"
+import HEADER from "../interfaces/header"
 
 const Header = ({title}:HEADER) => {
   return (
