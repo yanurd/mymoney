@@ -1,8 +1,11 @@
-import Header from "./components/Header"
+import Login from "./containers/Login"
 
 const App = () => {
   return (
-    <><Header title='My Money' styles='text-4xl'/></>
+    <section className="bg-main min-h-screen" >
+      <Login/>
+    </section>
+    
   )
 }
 
