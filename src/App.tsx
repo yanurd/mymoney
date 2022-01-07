@@ -1,9 +1,9 @@
-import Login from "./containers/Login"
+import Register from "./containers/Register"
 
 const App = () => {
   return (
-    <section className="bg-main min-h-screen" >
-      <Login/>
+    <section className="bg-main min-h-screen flex flex-col justify-center items-center" >
+      <Register/>
     </section>
     
   )
