@@ -95,7 +95,7 @@ const Register = () => {
         Already registered? 
         <a 
           href="#" 
-          className="font-bold">
+          className="font-bold hover:underline hover:underline-offset-8 transition-all duration-300">
             Sign in!
         </a>
       </p>

@@ -49,14 +49,15 @@ const Login = () => {
         </label>
         <a 
           href="#"
-          className="text-right text-white mb-12">Forgot password?</a>
+          className="text-right text-white mb-12 underline hover:underline-offset-8">Forgot password?</a>
         <button 
           type="submit"
           className="py-3 font-bold text-xl text-white bg-main-button rounded cursor-pointer">
             Login
           </button>
       </form>
-      <h3 className="mt-2 text-sm text-white">Dont have an account? <a href="#">Create One</a></h3>
+      <h3 className="mt-2 text-sm text-white">Dont have an account? 
+        <a className="underline hover:underline-offset-8" href="#"> Create One</a></h3>
     </section>
   )
 }
