@@ -1,9 +1,9 @@
 import HEADER from "../interfaces/header"
 
-const Header = ({title}:HEADER) => {
+const Header = ({title, styles}:HEADER) => {
   return (
     <h1 
-      className="pt-20 md:pt-0 text-3xl text-white">
+      className={`pt-20 md:pt-0 text-3xl text-white ${styles}`}>
         {title}
     </h1>)
 }
