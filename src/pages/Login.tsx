@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom"
 
 //Components
 import Header from "../components/Header"
@@ -15,7 +16,7 @@ const Login = () => {
   const onSubmit = (data: LoginForm) => console.log(data)
   return (
     <section className="mx-14 flex flex-col justify-center items-center">
-      <Header title="My Money" />
+      <Header title="My Money" styles="mb-12"/>
 
       <form 
         onSubmit={handleSubmit(onSubmit)}
@@ -25,7 +26,7 @@ const Login = () => {
           <input
             required
             placeholder="Enter your mail address"
-            className="pl-4 p-2 bg-secondary rounded" 
+            className="pl-4 p-2 bg-secondary rounded text-white" 
             {...register('email'), 
             {
               required: true,
@@ -40,24 +41,27 @@ const Login = () => {
           <input
             type='password'
             placeholder="Password"
-            className="pl-4 p-2 bg-secondary rounded" 
+            className="pl-4 p-2 bg-secondary rounded text-white" 
             {...register('password'), 
             {
               required: true,
               message: 'This field is required'
             }}/>
         </label>
-        <a 
-          href="#"
-          className="text-right text-white mb-12 underline hover:underline-offset-8">Forgot password?</a>
+        <Link to='/password-recovery'
+        className="text-right text-white mb-12 hover:underline hover:underline-offset-8">Forgot password?</Link>
         <button 
           type="submit"
           className="py-3 font-bold text-xl text-white bg-main-button rounded cursor-pointer">
             Login
           </button>
       </form>
-      <h3 className="mt-2 text-sm text-white">Dont have an account? 
-        <a className="underline hover:underline-offset-8" href="#"> Create One</a></h3>
+      <h3 className="mt-2 text-sm text-white">Dont have an account? <span> </span> 
+        <Link to='/register' 
+          className="font-bold hover:underline hover:underline-offset-8"> 
+             Create one
+        </Link>
+      </h3>
     </section>
   )
 }
