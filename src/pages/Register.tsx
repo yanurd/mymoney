@@ -9,7 +9,7 @@ const Register = () => {
   const onSubmit = (data: RegisterForm) => console.log(data)
   return (
     <section className="flex flex-col justify-start items-start">
-      <Header title='Register' />
+      <Header title='Register' styles="font-bold" />
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="pt-8 flex flex-col">
