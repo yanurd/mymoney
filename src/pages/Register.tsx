@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form"
+import { Link } from "react-router-dom"
 import Header from "../components/Header"
 import { EmailValidation } from "../constants/RegEx"
 import { RegisterForm } from "../interfaces/register"
@@ -9,7 +10,7 @@ const Register = () => {
   const onSubmit = (data: RegisterForm) => console.log(data)
   return (
     <section className="flex flex-col justify-start items-start">
-      <Header title='Register' styles="font-bold" />
+      <Header title='Register'/>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="pt-8 flex flex-col">
@@ -19,7 +20,7 @@ const Register = () => {
               name="firstName"
               type='text'
               placeholder="Insert your first name"
-              className="pl-4 p-2 bg-secondary rounded"
+              className="pl-4 p-2 bg-secondary rounded text-white"
               {...register('firstName'),
               {
                 required: true,
@@ -34,7 +35,7 @@ const Register = () => {
               name="lastName"
               type='text'
               placeholder="Insert your last name"
-              className="pl-4 p-2 bg-secondary rounded"
+              className="pl-4 p-2 bg-secondary rounded font-white"
               {...register('lastName'),
               {
                 required: true,
@@ -50,7 +51,7 @@ const Register = () => {
             name="email"
             required
             placeholder="Enter your mail address"
-            className="pl-4 p-2 bg-secondary rounded" 
+            className="pl-4 p-2 bg-secondary rounded font-white" 
             {...register('email'), 
             {
               required: true,
@@ -66,7 +67,7 @@ const Register = () => {
           <input
             type='password'
             placeholder="Password"
-            className="pl-4 p-2 bg-secondary rounded" 
+            className="pl-4 p-2 bg-secondary rounded font-white" 
             {...register('password'), 
             {
               required: true,
@@ -93,11 +94,11 @@ const Register = () => {
       </form>
       <p className="mt-2 text-white">
         Already registered? 
-        <a 
-          href="#" 
+        <Link 
+          to='/' 
           className="font-bold hover:underline hover:underline-offset-8 transition-all duration-300">
-            Sign in!
-        </a>
+          <span> Sign in!</span>
+        </Link>
       </p>
     </section>
   )
