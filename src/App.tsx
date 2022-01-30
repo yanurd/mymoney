@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom"
 
 import Login from "./pages/Login"
 const Register = lazy(() => import("./pages/Register"))
+const PasswordRecovery = lazy(() => import("./pages/PasswordRecovery"))
 
 const App = () => {
   return (
@@ -13,6 +14,10 @@ const App = () => {
         <Route path='/register' element={
           <Suspense fallback={<>...</>} >
             <Register />
+          </Suspense>} />
+        <Route path='/password-recovery' element={
+          <Suspense fallback={<>...</>} >
+            <PasswordRecovery />
           </Suspense>} />
       </Routes>
     </BrowserRouter>
