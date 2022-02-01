@@ -6,7 +6,7 @@ import { PasswordRecoveryForm } from "../interfaces/passwordRecovery"
 import { EmailValidation } from "../constants/RegEx"
 
 const PasswordRecovery = () => {
-  const {register, handleSubmit} = useForm<PasswordRecoveryForm>()
+  const {register, handleSubmit, formState: {errors}} = useForm<PasswordRecoveryForm>()
   const onSubmit = (data: PasswordRecoveryForm) => console.log(data)
   const navigate = useNavigate()
   return (
@@ -29,6 +29,11 @@ const PasswordRecovery = () => {
                 message: 'Enter a valid email address'
               }
             })}/>
+            {
+              errors.email && errors.email?.message
+              ? <span className="font-semibold">{errors.email.message}</span>
+              : null
+            }
         </label>
         
         <button 
