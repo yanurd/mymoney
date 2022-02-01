@@ -30,11 +30,14 @@ const Login = () => {
             className="pl-4 p-2 bg-secondary rounded " 
             {...register("email", {
               required: true,
-              pattern: EmailValidation,
+              pattern: {
+                value: EmailValidation,
+                message: 'Invalid email'
+              }
             })}/>
             {
-              errors.email
-              ? <span className="">Invalid email</span>
+              errors.email && errors.email?.message
+              ? <span className="font-semibold">{errors.email.message}</span>
               : null
             }
         </label>
@@ -46,7 +49,7 @@ const Login = () => {
             className="pl-4 p-2 bg-secondary rounded " 
             {...register("password", {
               required: true,
-              minLength: 8
+              minLength: 8,
             })}
             />
             {
@@ -59,7 +62,7 @@ const Login = () => {
         className="text-right  mb-12 hover:underline hover:underline-offset-8">Forgot password?</Link>
         <button 
           type="submit"
-          className="py-3 font-bold text-xl  bg-main-button rounded cursor-pointer">
+          className="py-3 font-bold text-xl  bg-main-button rounded cursor-pointer hover:bg-purple-800 transition-colors">
             Login
           </button>
       </form>

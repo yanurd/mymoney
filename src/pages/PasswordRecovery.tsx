@@ -19,14 +19,16 @@ const PasswordRecovery = () => {
       <h2 className="text-white">Welcome Back</h2>
         <label className="my-3">
           <input
-            required
             placeholder="Enter your mail address"
             className="pl-4 p-2 bg-secondary rounded text-white" 
-            {...register('email'), 
+            {...register('email', 
             {
-              pattern: '/^[A-Za-z]+$/i',
-              message: 'Email format is not correct'
-            }}/>
+              required: true,
+              pattern: {
+                value: EmailValidation,
+                message: 'Enter a valid email address'
+              }
+            })}/>
         </label>
         
         <button 
